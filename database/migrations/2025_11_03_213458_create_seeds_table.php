@@ -13,11 +13,10 @@ return new class extends Migration
     {
         Schema::create('seeds', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('seed_code');
-            $table->string('biome');
-            $table->string('structure')->nullable();
-            $table->text('description')->nullable();    
+            $table->foreingId('user_id')->constrained()->onDelete('cascade');
+            $table->string('value');
+            $table->json('metrics')->nullable();
+            $table->enum('status', ['pending', 'testing', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }
