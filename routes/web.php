@@ -17,4 +17,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/seeds', [App\Http\Controllers\SeedController::class, 'index'])->name('seeds.index');
+    Route::get('/seeds/generate', [App\Http\Controllers\SeedController::class, 'generate'])->name('seeds.generate');
+    Route::post('/seeds', [App\Http\Controllers\SeedController::class, 'store'])->name('seeds.store');
+});
+
 require __DIR__.'/auth.php';
