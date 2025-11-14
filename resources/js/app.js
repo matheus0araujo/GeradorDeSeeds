@@ -1,6 +1,7 @@
 import './bootstrap';
 import '../css/app.css';
-import 'bootstrap/dist/css/bootstrap.bundle.js';
+import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // AdminLTE
 import 'admin-lte/dist/js/adminlte.js';

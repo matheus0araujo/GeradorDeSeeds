@@ -26,7 +26,7 @@
     </main>
 
     <footer class="relative z-10 mt-auto mb-4 text-sm text-gray-300">
-        © {{ date('Y') }} Gerador de Seeds - Criado por Matheuzinho
+        © {{ date('Y') }} Gerador de Seeds - Criado por Matheus
     </footer>
 </body>
 </html>
