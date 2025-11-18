@@ -7,7 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'admin-lte/dist/js/adminlte.js';
 import 'admin-lte/dist/css/adminlte.css';
 
-import '@fontawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+import '@fortawesome/fontawesome-free/js/all.min.js';
+
 
 import Alpine from 'alpinejs';
 

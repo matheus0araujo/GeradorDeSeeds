@@ -24,12 +24,22 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $request->authenticate();
+        try {
+            $request->authenticate();
+            $request->session()->regenerate();
 
-        $request->session()->regenerate();
+            return redirect()->intended(RouteServiceProvider::HOME);
 
-        return redirect()->intended(route('dashboard', absolute: false));
+        } catch (\Illuminate\Validation\ValidationException $e) {
+
+            return back()
+                ->withErrors([
+                    'email' => 'Email ou senha incorretos.'
+                ])
+                ->withInput();
+        }
     }
+
 
     /**
      * Destroy an authenticated session.
